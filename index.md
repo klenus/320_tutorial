@@ -24,7 +24,9 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```ipython
+```
+
+```python
 #This tutorial is a NFL penalty analysis
 !pip install nflfastpy
 import nflfastpy
