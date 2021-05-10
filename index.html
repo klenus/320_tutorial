@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>320_tutorial</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14256,10 +14256,16 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Penalty Analysis</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#This tutorial is a NFL penalty analysis</span>
@@ -14293,20 +14299,20 @@ a.anchor-link {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Requirement already satisfied: nflfastpy in /opt/conda/lib/python3.8/site-packages (0.0.12)
 Requirement already satisfied: requests in /opt/conda/lib/python3.8/site-packages (from nflfastpy) (2.25.1)
-Requirement already satisfied: matplotlib in /opt/conda/lib/python3.8/site-packages (from nflfastpy) (3.3.3)
 Requirement already satisfied: pyreadr in /opt/conda/lib/python3.8/site-packages (from nflfastpy) (0.4.1)
+Requirement already satisfied: matplotlib in /opt/conda/lib/python3.8/site-packages (from nflfastpy) (3.3.3)
 Requirement already satisfied: pandas in /opt/conda/lib/python3.8/site-packages (from nflfastpy) (1.1.5)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (0.10.0)
+Requirement already satisfied: numpy&gt;=1.15 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (1.19.5)
 Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (2.4.7)
 Requirement already satisfied: pillow&gt;=6.2.0 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (8.1.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (1.3.1)
 Requirement already satisfied: python-dateutil&gt;=2.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (2.8.1)
-Requirement already satisfied: numpy&gt;=1.15 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (1.19.5)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/conda/lib/python3.8/site-packages (from matplotlib-&gt;nflfastpy) (0.10.0)
 Requirement already satisfied: six in /opt/conda/lib/python3.8/site-packages (from cycler&gt;=0.10-&gt;matplotlib-&gt;nflfastpy) (1.15.0)
 Requirement already satisfied: pytz&gt;=2017.2 in /opt/conda/lib/python3.8/site-packages (from pandas-&gt;nflfastpy) (2020.5)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /opt/conda/lib/python3.8/site-packages (from requests-&gt;nflfastpy) (4.0.0)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/conda/lib/python3.8/site-packages (from requests-&gt;nflfastpy) (1.26.2)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /opt/conda/lib/python3.8/site-packages (from requests-&gt;nflfastpy) (2.10)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /opt/conda/lib/python3.8/site-packages (from requests-&gt;nflfastpy) (4.0.0)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8/site-packages (from requests-&gt;nflfastpy) (2020.12.5)
 </pre>
 </div>
@@ -14319,7 +14325,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">nflfastpy</span><span class="o">.</span><span class="n">load_pbp_data</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">)</span>
@@ -14332,10 +14338,10 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#list(df.columns.values)</span>
@@ -14346,402 +14352,10 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;play_id&#39;,
- &#39;game_id&#39;,
- &#39;old_game_id&#39;,
- &#39;home_team&#39;,
- &#39;away_team&#39;,
- &#39;season_type&#39;,
- &#39;week&#39;,
- &#39;posteam&#39;,
- &#39;posteam_type&#39;,
- &#39;defteam&#39;,
- &#39;side_of_field&#39;,
- &#39;yardline_100&#39;,
- &#39;game_date&#39;,
- &#39;quarter_seconds_remaining&#39;,
- &#39;half_seconds_remaining&#39;,
- &#39;game_seconds_remaining&#39;,
- &#39;game_half&#39;,
- &#39;quarter_end&#39;,
- &#39;drive&#39;,
- &#39;sp&#39;,
- &#39;qtr&#39;,
- &#39;down&#39;,
- &#39;goal_to_go&#39;,
- &#39;time&#39;,
- &#39;yrdln&#39;,
- &#39;ydstogo&#39;,
- &#39;ydsnet&#39;,
- &#39;desc&#39;,
- &#39;play_type&#39;,
- &#39;yards_gained&#39;,
- &#39;shotgun&#39;,
- &#39;no_huddle&#39;,
- &#39;qb_dropback&#39;,
- &#39;qb_kneel&#39;,
- &#39;qb_spike&#39;,
- &#39;qb_scramble&#39;,
- &#39;pass_length&#39;,
- &#39;pass_location&#39;,
- &#39;air_yards&#39;,
- &#39;yards_after_catch&#39;,
- &#39;run_location&#39;,
- &#39;run_gap&#39;,
- &#39;field_goal_result&#39;,
- &#39;kick_distance&#39;,
- &#39;extra_point_result&#39;,
- &#39;two_point_conv_result&#39;,
- &#39;home_timeouts_remaining&#39;,
- &#39;away_timeouts_remaining&#39;,
- &#39;timeout&#39;,
- &#39;timeout_team&#39;,
- &#39;td_team&#39;,
- &#39;td_player_name&#39;,
- &#39;td_player_id&#39;,
- &#39;posteam_timeouts_remaining&#39;,
- &#39;defteam_timeouts_remaining&#39;,
- &#39;total_home_score&#39;,
- &#39;total_away_score&#39;,
- &#39;posteam_score&#39;,
- &#39;defteam_score&#39;,
- &#39;score_differential&#39;,
- &#39;posteam_score_post&#39;,
- &#39;defteam_score_post&#39;,
- &#39;score_differential_post&#39;,
- &#39;no_score_prob&#39;,
- &#39;opp_fg_prob&#39;,
- &#39;opp_safety_prob&#39;,
- &#39;opp_td_prob&#39;,
- &#39;fg_prob&#39;,
- &#39;safety_prob&#39;,
- &#39;td_prob&#39;,
- &#39;extra_point_prob&#39;,
- &#39;two_point_conversion_prob&#39;,
- &#39;ep&#39;,
- &#39;epa&#39;,
- &#39;total_home_epa&#39;,
- &#39;total_away_epa&#39;,
- &#39;total_home_rush_epa&#39;,
- &#39;total_away_rush_epa&#39;,
- &#39;total_home_pass_epa&#39;,
- &#39;total_away_pass_epa&#39;,
- &#39;air_epa&#39;,
- &#39;yac_epa&#39;,
- &#39;comp_air_epa&#39;,
- &#39;comp_yac_epa&#39;,
- &#39;total_home_comp_air_epa&#39;,
- &#39;total_away_comp_air_epa&#39;,
- &#39;total_home_comp_yac_epa&#39;,
- &#39;total_away_comp_yac_epa&#39;,
- &#39;total_home_raw_air_epa&#39;,
- &#39;total_away_raw_air_epa&#39;,
- &#39;total_home_raw_yac_epa&#39;,
- &#39;total_away_raw_yac_epa&#39;,
- &#39;wp&#39;,
- &#39;def_wp&#39;,
- &#39;home_wp&#39;,
- &#39;away_wp&#39;,
- &#39;wpa&#39;,
- &#39;vegas_wpa&#39;,
- &#39;vegas_home_wpa&#39;,
- &#39;home_wp_post&#39;,
- &#39;away_wp_post&#39;,
- &#39;vegas_wp&#39;,
- &#39;vegas_home_wp&#39;,
- &#39;total_home_rush_wpa&#39;,
- &#39;total_away_rush_wpa&#39;,
- &#39;total_home_pass_wpa&#39;,
- &#39;total_away_pass_wpa&#39;,
- &#39;air_wpa&#39;,
- &#39;yac_wpa&#39;,
- &#39;comp_air_wpa&#39;,
- &#39;comp_yac_wpa&#39;,
- &#39;total_home_comp_air_wpa&#39;,
- &#39;total_away_comp_air_wpa&#39;,
- &#39;total_home_comp_yac_wpa&#39;,
- &#39;total_away_comp_yac_wpa&#39;,
- &#39;total_home_raw_air_wpa&#39;,
- &#39;total_away_raw_air_wpa&#39;,
- &#39;total_home_raw_yac_wpa&#39;,
- &#39;total_away_raw_yac_wpa&#39;,
- &#39;punt_blocked&#39;,
- &#39;first_down_rush&#39;,
- &#39;first_down_pass&#39;,
- &#39;first_down_penalty&#39;,
- &#39;third_down_converted&#39;,
- &#39;third_down_failed&#39;,
- &#39;fourth_down_converted&#39;,
- &#39;fourth_down_failed&#39;,
- &#39;incomplete_pass&#39;,
- &#39;touchback&#39;,
- &#39;interception&#39;,
- &#39;punt_inside_twenty&#39;,
- &#39;punt_in_endzone&#39;,
- &#39;punt_out_of_bounds&#39;,
- &#39;punt_downed&#39;,
- &#39;punt_fair_catch&#39;,
- &#39;kickoff_inside_twenty&#39;,
- &#39;kickoff_in_endzone&#39;,
- &#39;kickoff_out_of_bounds&#39;,
- &#39;kickoff_downed&#39;,
- &#39;kickoff_fair_catch&#39;,
- &#39;fumble_forced&#39;,
- &#39;fumble_not_forced&#39;,
- &#39;fumble_out_of_bounds&#39;,
- &#39;solo_tackle&#39;,
- &#39;safety&#39;,
- &#39;penalty&#39;,
- &#39;tackled_for_loss&#39;,
- &#39;fumble_lost&#39;,
- &#39;own_kickoff_recovery&#39;,
- &#39;own_kickoff_recovery_td&#39;,
- &#39;qb_hit&#39;,
- &#39;rush_attempt&#39;,
- &#39;pass_attempt&#39;,
- &#39;sack&#39;,
- &#39;touchdown&#39;,
- &#39;pass_touchdown&#39;,
- &#39;rush_touchdown&#39;,
- &#39;return_touchdown&#39;,
- &#39;extra_point_attempt&#39;,
- &#39;two_point_attempt&#39;,
- &#39;field_goal_attempt&#39;,
- &#39;kickoff_attempt&#39;,
- &#39;punt_attempt&#39;,
- &#39;fumble&#39;,
- &#39;complete_pass&#39;,
- &#39;assist_tackle&#39;,
- &#39;lateral_reception&#39;,
- &#39;lateral_rush&#39;,
- &#39;lateral_return&#39;,
- &#39;lateral_recovery&#39;,
- &#39;passer_player_id&#39;,
- &#39;passer_player_name&#39;,
- &#39;passing_yards&#39;,
- &#39;receiver_player_id&#39;,
- &#39;receiver_player_name&#39;,
- &#39;receiving_yards&#39;,
- &#39;rusher_player_id&#39;,
- &#39;rusher_player_name&#39;,
- &#39;rushing_yards&#39;,
- &#39;lateral_receiver_player_id&#39;,
- &#39;lateral_receiver_player_name&#39;,
- &#39;lateral_receiving_yards&#39;,
- &#39;lateral_rusher_player_id&#39;,
- &#39;lateral_rusher_player_name&#39;,
- &#39;lateral_rushing_yards&#39;,
- &#39;lateral_sack_player_id&#39;,
- &#39;lateral_sack_player_name&#39;,
- &#39;interception_player_id&#39;,
- &#39;interception_player_name&#39;,
- &#39;lateral_interception_player_id&#39;,
- &#39;lateral_interception_player_name&#39;,
- &#39;punt_returner_player_id&#39;,
- &#39;punt_returner_player_name&#39;,
- &#39;lateral_punt_returner_player_id&#39;,
- &#39;lateral_punt_returner_player_name&#39;,
- &#39;kickoff_returner_player_name&#39;,
- &#39;kickoff_returner_player_id&#39;,
- &#39;lateral_kickoff_returner_player_id&#39;,
- &#39;lateral_kickoff_returner_player_name&#39;,
- &#39;punter_player_id&#39;,
- &#39;punter_player_name&#39;,
- &#39;kicker_player_name&#39;,
- &#39;kicker_player_id&#39;,
- &#39;own_kickoff_recovery_player_id&#39;,
- &#39;own_kickoff_recovery_player_name&#39;,
- &#39;blocked_player_id&#39;,
- &#39;blocked_player_name&#39;,
- &#39;tackle_for_loss_1_player_id&#39;,
- &#39;tackle_for_loss_1_player_name&#39;,
- &#39;tackle_for_loss_2_player_id&#39;,
- &#39;tackle_for_loss_2_player_name&#39;,
- &#39;qb_hit_1_player_id&#39;,
- &#39;qb_hit_1_player_name&#39;,
- &#39;qb_hit_2_player_id&#39;,
- &#39;qb_hit_2_player_name&#39;,
- &#39;forced_fumble_player_1_team&#39;,
- &#39;forced_fumble_player_1_player_id&#39;,
- &#39;forced_fumble_player_1_player_name&#39;,
- &#39;forced_fumble_player_2_team&#39;,
- &#39;forced_fumble_player_2_player_id&#39;,
- &#39;forced_fumble_player_2_player_name&#39;,
- &#39;solo_tackle_1_team&#39;,
- &#39;solo_tackle_2_team&#39;,
- &#39;solo_tackle_1_player_id&#39;,
- &#39;solo_tackle_2_player_id&#39;,
- &#39;solo_tackle_1_player_name&#39;,
- &#39;solo_tackle_2_player_name&#39;,
- &#39;assist_tackle_1_player_id&#39;,
- &#39;assist_tackle_1_player_name&#39;,
- &#39;assist_tackle_1_team&#39;,
- &#39;assist_tackle_2_player_id&#39;,
- &#39;assist_tackle_2_player_name&#39;,
- &#39;assist_tackle_2_team&#39;,
- &#39;assist_tackle_3_player_id&#39;,
- &#39;assist_tackle_3_player_name&#39;,
- &#39;assist_tackle_3_team&#39;,
- &#39;assist_tackle_4_player_id&#39;,
- &#39;assist_tackle_4_player_name&#39;,
- &#39;assist_tackle_4_team&#39;,
- &#39;tackle_with_assist&#39;,
- &#39;tackle_with_assist_1_player_id&#39;,
- &#39;tackle_with_assist_1_player_name&#39;,
- &#39;tackle_with_assist_1_team&#39;,
- &#39;tackle_with_assist_2_player_id&#39;,
- &#39;tackle_with_assist_2_player_name&#39;,
- &#39;tackle_with_assist_2_team&#39;,
- &#39;pass_defense_1_player_id&#39;,
- &#39;pass_defense_1_player_name&#39;,
- &#39;pass_defense_2_player_id&#39;,
- &#39;pass_defense_2_player_name&#39;,
- &#39;fumbled_1_team&#39;,
- &#39;fumbled_1_player_id&#39;,
- &#39;fumbled_1_player_name&#39;,
- &#39;fumbled_2_player_id&#39;,
- &#39;fumbled_2_player_name&#39;,
- &#39;fumbled_2_team&#39;,
- &#39;fumble_recovery_1_team&#39;,
- &#39;fumble_recovery_1_yards&#39;,
- &#39;fumble_recovery_1_player_id&#39;,
- &#39;fumble_recovery_1_player_name&#39;,
- &#39;fumble_recovery_2_team&#39;,
- &#39;fumble_recovery_2_yards&#39;,
- &#39;fumble_recovery_2_player_id&#39;,
- &#39;fumble_recovery_2_player_name&#39;,
- &#39;sack_player_id&#39;,
- &#39;sack_player_name&#39;,
- &#39;half_sack_1_player_id&#39;,
- &#39;half_sack_1_player_name&#39;,
- &#39;half_sack_2_player_id&#39;,
- &#39;half_sack_2_player_name&#39;,
- &#39;return_team&#39;,
- &#39;return_yards&#39;,
- &#39;penalty_team&#39;,
- &#39;penalty_player_id&#39;,
- &#39;penalty_player_name&#39;,
- &#39;penalty_yards&#39;,
- &#39;replay_or_challenge&#39;,
- &#39;replay_or_challenge_result&#39;,
- &#39;penalty_type&#39;,
- &#39;defensive_two_point_attempt&#39;,
- &#39;defensive_two_point_conv&#39;,
- &#39;defensive_extra_point_attempt&#39;,
- &#39;defensive_extra_point_conv&#39;,
- &#39;season&#39;,
- &#39;cp&#39;,
- &#39;cpoe&#39;,
- &#39;series&#39;,
- &#39;series_success&#39;,
- &#39;series_result&#39;,
- &#39;order_sequence&#39;,
- &#39;start_time&#39;,
- &#39;time_of_day&#39;,
- &#39;stadium&#39;,
- &#39;weather&#39;,
- &#39;nfl_api_id&#39;,
- &#39;play_clock&#39;,
- &#39;play_deleted&#39;,
- &#39;play_type_nfl&#39;,
- &#39;special_teams_play&#39;,
- &#39;st_play_type&#39;,
- &#39;end_clock_time&#39;,
- &#39;end_yard_line&#39;,
- &#39;fixed_drive&#39;,
- &#39;fixed_drive_result&#39;,
- &#39;drive_real_start_time&#39;,
- &#39;drive_play_count&#39;,
- &#39;drive_time_of_possession&#39;,
- &#39;drive_first_downs&#39;,
- &#39;drive_inside20&#39;,
- &#39;drive_ended_with_score&#39;,
- &#39;drive_quarter_start&#39;,
- &#39;drive_quarter_end&#39;,
- &#39;drive_yards_penalized&#39;,
- &#39;drive_start_transition&#39;,
- &#39;drive_end_transition&#39;,
- &#39;drive_game_clock_start&#39;,
- &#39;drive_game_clock_end&#39;,
- &#39;drive_start_yard_line&#39;,
- &#39;drive_end_yard_line&#39;,
- &#39;drive_play_id_started&#39;,
- &#39;drive_play_id_ended&#39;,
- &#39;away_score&#39;,
- &#39;home_score&#39;,
- &#39;location&#39;,
- &#39;result&#39;,
- &#39;total&#39;,
- &#39;spread_line&#39;,
- &#39;total_line&#39;,
- &#39;div_game&#39;,
- &#39;roof&#39;,
- &#39;surface&#39;,
- &#39;temp&#39;,
- &#39;wind&#39;,
- &#39;home_coach&#39;,
- &#39;away_coach&#39;,
- &#39;stadium_id&#39;,
- &#39;game_stadium&#39;,
- &#39;aborted_play&#39;,
- &#39;success&#39;,
- &#39;passer&#39;,
- &#39;passer_jersey_number&#39;,
- &#39;rusher&#39;,
- &#39;rusher_jersey_number&#39;,
- &#39;receiver&#39;,
- &#39;receiver_jersey_number&#39;,
- &#39;pass&#39;,
- &#39;rush&#39;,
- &#39;first_down&#39;,
- &#39;special&#39;,
- &#39;play&#39;,
- &#39;passer_id&#39;,
- &#39;rusher_id&#39;,
- &#39;receiver_id&#39;,
- &#39;name&#39;,
- &#39;jersey_number&#39;,
- &#39;id&#39;,
- &#39;fantasy_player_name&#39;,
- &#39;fantasy_player_id&#39;,
- &#39;fantasy&#39;,
- &#39;fantasy_id&#39;,
- &#39;out_of_bounds&#39;,
- &#39;home_opening_kickoff&#39;,
- &#39;qb_epa&#39;,
- &#39;xyac_epa&#39;,
- &#39;xyac_mean_yardage&#39;,
- &#39;xyac_median_yardage&#39;,
- &#39;xyac_success&#39;,
- &#39;xyac_fd&#39;,
- &#39;xpass&#39;,
- &#39;pass_oe&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span>
@@ -14783,7 +14397,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
@@ -15061,7 +14675,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#team colors</span>
@@ -15155,7 +14769,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.8
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wpa_for</span> <span class="o">=</span> <span class="p">{}</span>
