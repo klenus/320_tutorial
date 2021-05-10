@@ -24,6 +24,17 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
+```ipython
+#This tutorial is a NFL penalty analysis
+!pip install nflfastpy
+import nflfastpy
+import pandas as pd
+import matplotlib.pyplot as plt
+
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', -1)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
